@@ -2,8 +2,7 @@ package com.app;
 
 import javax.swing.SwingUtilities;
 
-import com.app.client.login.LoginTemplate;
-import com.app.client.vistaPrincipal.VistaPrincipalTemplate;
+import com.app.client.login.LoginComponent;
 
 /**
  * Hello world!
@@ -16,9 +15,7 @@ public class App
 
         Runnable runApplication = new Runnable(){
             public void run(){
-                LoginTemplate login = new LoginTemplate();
-                //VistaPrincipalTemplate login = new VistaPrincipalTemplate();
-                login.getClass();
+                LoginComponent login = new LoginComponent();
             }
         };
         SwingUtilities.invokeLater(runApplication);
