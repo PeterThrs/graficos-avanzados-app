@@ -7,6 +7,9 @@ import javax.swing.JOptionPane;
 
 import com.app.client.vistaPrincipal.VistaPrincipalComponent;
 
+import lombok.Data;
+
+@Data
 public class LoginComponent implements ActionListener {
 
     private LoginTemplate loginTemplate;
@@ -61,7 +64,11 @@ public class LoginComponent implements ActionListener {
     }
 
     public void entrar() {
-        this.vistaPrincipal = new VistaPrincipalComponent();
+        if(vistaPrincipal == null){
+            this.vistaPrincipal = new VistaPrincipalComponent(this);
+        } else {
+            this.vistaPrincipal.getVistaPrincipalTemplate().setVisible(true);
+        }
         loginTemplate.setVisible(false);
     }
 

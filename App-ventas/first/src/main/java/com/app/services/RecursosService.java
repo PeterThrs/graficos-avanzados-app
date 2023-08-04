@@ -16,10 +16,10 @@ import javax.swing.ImageIcon;
 public class RecursosService {
 
     private Color colorPrincipal, colorGrisOscuro, colorSecundario;
-    private Font fontTPrincipal, fontTitulo, fontSubtitulo, fontMediana;
+    private Font fontTPrincipal, fontTitulo, fontSubtitulo, fontMediana, fontLigera;
     private Cursor cMano;
     private Border bInferiorAzul;
-    private ImageIcon iCerrar;
+    private ImageIcon iCerrar, iMinimizar;
 
     static private RecursosService servicio;
 
@@ -50,6 +50,7 @@ public class RecursosService {
         fontTitulo = new Font("Calibri (Cuerpo)", Font.BOLD, 17);
         fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
         fontMediana = new Font("LuzSans-Book", Font.PLAIN, 15);
+        fontLigera = new Font("LuzSans-Book", Font.PLAIN, 12);
     }
 
     private void crearCursores() {
@@ -62,6 +63,7 @@ public class RecursosService {
 
     private void crearImagenes() {
         iCerrar = new ImageIcon("first/src/main/resources/img/cerrar.png");
+        iMinimizar = new ImageIcon("first/src/main/resources/img/minimizar.png");
     }
 
     private void generarFuentes() {
@@ -114,5 +116,9 @@ public class RecursosService {
     public Color getColorSecundario(){
         return colorSecundario;
     }
+
+    public Font getFontLigera() { return fontLigera; }
+
+    public ImageIcon getIMinimizar() { return iMinimizar; }
 
 }

@@ -1,13 +1,9 @@
 package com.app.client.vistaPrincipal;
 
-import java.awt.Color;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import com.app.services.ObjGraficosService;
-import com.app.services.RecursosService;
 
 /**
  * 
@@ -16,21 +12,19 @@ import com.app.services.RecursosService;
 
 public class VistaPrincipalTemplate extends JFrame {
 
-    private JPanel pNavegacion, pBarra, pPrincipal;
-
     private static final long serialVersionUID = 1L;
 
-    private RecursosService sRecursos;
     private ObjGraficosService sObjGraficos;
-
     private VistaPrincipalComponent vistaPrincipalComponent;
+
+    private JPanel pNavegacion, pBarra, pPrincipal;
 
     public VistaPrincipalTemplate(VistaPrincipalComponent vistaPrincipalComponent) {
         super("Vista Principal");
 
         this.vistaPrincipalComponent = vistaPrincipalComponent;
+        this.vistaPrincipalComponent.getClass();
 
-        sRecursos = RecursosService.getService();
         sObjGraficos = ObjGraficosService.getService();
 
         this.crearJPanels();
@@ -50,13 +44,13 @@ public class VistaPrincipalTemplate extends JFrame {
 
     public void crearJPanels() {
         // Dentro del método crearJPanels
-        pNavegacion = sObjGraficos.construirJPanel(0, 0, 250, 700, sRecursos.getColorSecundario(), null);
+        pNavegacion = sObjGraficos.construirJPanel(0, 0, 250, 700, null, null);
         this.add(pNavegacion);
 
-        pBarra = sObjGraficos.construirJPanel(250, 0, 850, 50, sRecursos.getColorPrincipal(), null);
+        pBarra = sObjGraficos.construirJPanel(250, 0, 850, 50, null, null);
         this.add(pBarra);
 
-        pPrincipal = sObjGraficos.construirJPanel(250, 50, 850, 600, Color.WHITE, null);
+        pPrincipal = sObjGraficos.construirJPanel(250, 50, 850, 600, null, null);
         this.add(pPrincipal);
     }
 
